@@ -40,7 +40,7 @@ class Article {
 */
 
 const articles = document.querySelectorAll('.article');
-
+const articleContainer = document.querySelector('.articles');
 articles.forEach(article => new Article(article));
 
 
@@ -54,3 +54,9 @@ function makeArticle({ title, contentHTML }) {
   newArticle.innerHTML = HTML;
   return newArticle;
 }
+function renderArticle(articleToRender) {
+  articleContainer.prepend(articleToRender);
+}
+// TEST
+const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
+renderArticle(testArticle);
