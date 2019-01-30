@@ -59,5 +59,15 @@ function renderArticle(articleToRender) {
   return new Article(articleToRender);
 }
 // TEST
-const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
-renderArticle(testArticle);
+// const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
+// renderArticle(testArticle);
+
+const articleMaker = document.querySelector('.create-article button');
+const articleTitleInput = document.querySelector('.create-article input');
+const articleContentInput = document.querySelector('.create-article textarea');
+articleMaker.addEventListener('click', () => {
+  const articleTitle = articleTitleInput.value;
+  const articleContent = articleContentInput.value;
+  const newArticle = makeArticle({ title: articleTitle, contentHTML: articleContent });
+  renderArticle(newArticle);
+});
