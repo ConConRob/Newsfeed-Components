@@ -18,16 +18,16 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Part 1: The Menu
 
-* Import `Menu.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
-* Follow the instructions found in the Menu.js file to complete the JavaScript functionality.  NOTE: Start near the bottom of the page by looking for `const menu`.
+* DONE Import `Menu.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
+* DONE Follow the instructions found in the Menu.js file to complete the JavaScript functionality.  NOTE: Start near the bottom of the page by looking for `const menu`.
 
 ### Part 2: The Articles Component
-* Import `Article.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
-* Follow the instructions found in the Articles.js file to complete the JavaScript functionality.  NOTE: Start near the bottom of the page by looking for `let articles`.
+* DONE Import `Article.less` from the correct path into index.less (follow the example for `Header.less` if you’re not sure how to write the correct path)
+* DONE Follow the instructions found in the Articles.js file to complete the JavaScript functionality.  NOTE: Start near the bottom of the page by looking for `let articles`.
 
 ### Part 3: Add Articles
 
-* Now that we have our components built, add a few articles of your own to the HTML. Notice how our JavaScript code automatically selects the new articles and adds the styling and functionality we just built to them. This is the power of components. Write the code once and add as many components as you want all while maintaining the functionality we built!
+* DONE Now that we have our components built, add a few articles of your own to the HTML. Notice how our JavaScript code automatically selects the new articles and adds the styling and functionality we just built to them. This is the power of components. Write the code once and add as many components as you want all while maintaining the functionality we built!
 
 ### Stretch Goals:
 
@@ -47,10 +47,10 @@ A few things to check out:
 Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
 
 * Animation: There are many ways to animate elements on the screen corresponding to user interactions.  Read the documentation of the animation platform of your choice. Animate all of the components on click.
-  * Animation Goal #1. Animate the menu opening: You will need to change the CSS for the menu in order to achieve this. Get the menu to slide in from the left side of the screen. And slide out when the button is clicked. Bonus: Get the menu to slide back out when the user clicks anywhere on the screen other than the menu. 
-  * Animation Goal #2 Animate the article opening. This one is a bit trickier. You will need to change the CSS for this component as well. Animate the component so that it slides open and slides closed on each click. Update the text in the expand button to read `'Click to Expand'` or `'Click to Close'` depending on the state of the article. 
+  * DONE WITHOUT CHANGING CSS Animation Goal #1. Animate the menu opening: You will need to change the CSS for the menu in order to achieve this. Get the menu to slide in from the left side of the screen. And slide out when the button is clicked. Bonus: Get the menu to slide back out when the user clicks anywhere on the screen other than the menu. 
+  * DONE Animation Goal #2 Animate the article opening. This one is a bit trickier. You will need to change the CSS for this component as well. Animate the component so that it slides open and slides closed on each click. Update the text in the expand button to read `'Click to Expand'` or `'Click to Close'` depending on the state of the article. 
 
-* Close Button
+*  DONE Close Button
 
   Add a close (or 'read') button to each Article component. When clicked the article will disappear.
 

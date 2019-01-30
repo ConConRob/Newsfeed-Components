@@ -65,7 +65,7 @@
   display: block;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 0;
 }
 .article {
   margin: 20px 10%;
@@ -108,6 +108,32 @@
 }
 .article-close {
   display: none;
+}
+.article.make-article {
+  margin: 100px 10% 10px 10%;
+  display: flex;
+  flex-direction: column;
+}
+.article.make-article .create-article {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 30px;
+  height: 300px;
+  width: 800px;
+  align-items: center;
+}
+.article.make-article .create-article input {
+  margin: 10px;
+  width: 100%;
+}
+.article.make-article .create-article textarea {
+  margin: 10px;
+  width: 100%;
+}
+.article.make-article .create-article button {
+  margin: 10px;
+  width: 100%;
 }
 html,
 body {
