@@ -42,3 +42,15 @@ class Article {
 const articles = document.querySelectorAll('.article');
 
 articles.forEach(article => new Article(article));
+
+
+// =========================MAKE A ARTICLE=========================
+
+function makeArticle({ title, contentHTML }) {
+  const newArticle = document.createElement('div');
+  newArticle.classList.add('article');
+  const date = new Date();
+  const HTML = `<h2>${title}</h2> <p class ="date">${date}</p> ${contentHTML}<span class='expandButton'></span> <button class="close">X</button>`;
+  newArticle.innerHTML = HTML;
+  return newArticle;
+}
