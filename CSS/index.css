@@ -77,6 +77,8 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition-duration: 1s;
+  transition: height 1s;
 }
 .article h2 {
   font-size: 28px;
