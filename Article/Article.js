@@ -49,7 +49,7 @@ articles.forEach(article => new Article(article));
 function makeArticle({ title, contentHTML }) {
   const newArticle = document.createElement('div');
   newArticle.classList.add('article');
-  const date = new Date();
+  const date = formatDate(new Date());
   const HTML = `<h2>${title}</h2> <p class ="date">${date}</p> ${contentHTML}<span class='expandButton'></span> <button class="close">X</button>`;
   newArticle.innerHTML = HTML;
   return newArticle;
@@ -57,6 +57,18 @@ function makeArticle({ title, contentHTML }) {
 function renderArticle(articleToRender) {
   articleContainer.prepend(articleToRender);
   return new Article(articleToRender);
+}
+function formatDate(date) {
+  const monthNames = [
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct",
+    "Nov", "Dec",
+  ];
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+  return `${monthNames[monthIndex]} ${day}th, ${year}`;
 }
 // TEST
 // const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
