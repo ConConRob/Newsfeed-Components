@@ -56,6 +56,7 @@ function makeArticle({ title, contentHTML }) {
 }
 function renderArticle(articleToRender) {
   articleContainer.prepend(articleToRender);
+  return new Article(articleToRender);
 }
 // TEST
 const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
