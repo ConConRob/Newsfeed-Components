@@ -3,22 +3,35 @@
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    this.domElement;
-    // create a reference to the ".expandButton" class. 
-    this.expandButton;
+    this.domElement = domElement;
+    // create a reference to the ".expandButton" class.
+    this.expandButton = this.domElement.querySelector('.expandButton');
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    
+    this.expandButton.innerText = "Click to Expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    
+    this.expandButton.addEventListener('click', () => this.expandArticle());
+    // ==================CLOSE ============================
+    // select the close button
+    this.closeButton = this.domElement.querySelector('.close');
+    // set a click handler on the closeButton reference, calling the closeArticle method.
+    this.closeButton.addEventListener('click', () => this.closeArticle());
   }
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
+    this.domElement.classList.toggle('article-open');
+    if (this.domElement.classList.contains("article-open")) {
+      this.expandButton.innerText = "Click to Close";
+    } else {
+      this.expandButton.innerText = "Click to Expand";
+    }
+  }
 
+  closeArticle() {
+    this.domElement.classList.add('article-close');
   }
 }
-
-/* START HERE: 
+/* START HERE:
 
 - Select all classes named ".article" and assign that value to the articles variable.  
 
@@ -26,4 +39,47 @@ class Article {
 
 */
 
-let articles;
+const articles = document.querySelectorAll('.article');
+const articleContainer = document.querySelector('.articles');
+articles.forEach(article => new Article(article));
+
+
+// =========================MAKE A ARTICLE=========================
+
+function makeArticle({ title, contentHTML }) {
+  const newArticle = document.createElement('div');
+  newArticle.classList.add('article');
+  const date = formatDate(new Date());
+  const HTML = `<h2>${title}</h2> <p class ="date">${date}</p> ${contentHTML}<span class='expandButton'></span> <button class="close">X</button>`;
+  newArticle.innerHTML = HTML;
+  return newArticle;
+}
+function renderArticle(articleToRender) {
+  articleContainer.prepend(articleToRender);
+  return new Article(articleToRender);
+}
+function formatDate(date) {
+  const monthNames = [
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct",
+    "Nov", "Dec",
+  ];
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+  return `${monthNames[monthIndex]} ${day}th, ${year}`;
+}
+// TEST
+// const testArticle = makeArticle({title:"sam", contentHTML:"<p>ssssssssssssssssssssssssssssssss</p>"});
+// renderArticle(testArticle);
+
+const articleMaker = document.querySelector('.create-article button');
+const articleTitleInput = document.querySelector('.create-article input');
+const articleContentInput = document.querySelector('.create-article textarea');
+articleMaker.addEventListener('click', () => {
+  const articleTitle = articleTitleInput.value;
+  const articleContent = articleContentInput.value;
+  const newArticle = makeArticle({ title: articleTitle, contentHTML: articleContent });
+  renderArticle(newArticle);
+});
